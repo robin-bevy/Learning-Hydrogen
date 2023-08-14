@@ -156,6 +156,7 @@ async function validateCustomerAccessToken(customerAccessToken, session) {
   if (!customerAccessToken?.accessToken || !customerAccessToken?.expiresAt) {
     return {isLoggedIn, headers};
   }
+  console.log(headers)
   const expiresAt = new Date(customerAccessToken.expiresAt);
   const dateNow = new Date();
   const customerAccessTokenExpired = expiresAt < dateNow;
