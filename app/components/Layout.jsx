@@ -1,4 +1,4 @@
-import {Await} from '@remix-run/react';
+import {Await, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Aside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
@@ -14,8 +14,10 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
     <>
       <CartAside cart={cart} />
       <SearchAside />
+     
       <MobileMenuAside menu={header.menu} />
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
+      <Link to={'/sample'}> Sample Page </Link>
       <main>{children}</main>
       <Suspense>
         <Await resolve={footer}>

@@ -63,54 +63,56 @@ export default function Login() {
   const error = data?.error || null;
 
   return (
-    <div className="login">
-      <h1>Sign in.</h1>
-      <Form method="POST">
-        <fieldset>
-          <label htmlFor="email">Email address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            placeholder="Email address"
-            aria-label="Email address"
-            // eslint-disable-next-line jsx-a11y/no-autofocus
-            autoFocus
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            placeholder="Password"
-            aria-label="Password"
-            minLength={8}
-            required
-          />
-        </fieldset>
-        {error ? (
-          <p>
-            <mark>
-              <small>{error}</small>
-            </mark>
-          </p>
-        ) : (
-          <br />
-        )}
-        <button type="submit">Sign in</button>
-      </Form>
-      <br />
-      <div>
+    <div className='flex items-center justify-center	flex-row'>
+    <div className="login p-4	border-solid border-2 border-indigo-600 ...">
+    <h1 className='text-center'>Sign in.</h1>
+    <Form method="POST">
+      <fieldset>
+        <label htmlFor="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          placeholder="Email address"
+          aria-label="Email address"
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autoComplete="current-password"
+          placeholder="Password"
+          aria-label="Password"
+          minLength={8}
+          required
+        />
+      </fieldset>
+      {error ? (
         <p>
-          <Link to="/account/recover">Forgot password →</Link>
+          <mark>
+            <small>{error}</small>
+          </mark>
         </p>
-        <p>
-          <Link to="/account/register">Register →</Link>
-        </p>
-      </div>
+      ) : (
+        <br />
+      )}
+      <button type="submit" >Sign in</button>
+    </Form>
+    <br />
+    <div>
+      <p>
+        <Link to="/account/recover">Forgot password →</Link>
+      </p>
+      <p>
+        <Link to="/account/register">Register →</Link>
+      </p>
+    </div>
+  </div>
     </div>
   );
 }

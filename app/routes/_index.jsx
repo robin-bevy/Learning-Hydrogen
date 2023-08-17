@@ -18,6 +18,7 @@ export async function loader({context}) {
 
 export default function Homepage() {
   const data = useLoaderData();
+  console.log(data.recommendedProducts)
   return (
     <div className="home">
       <FeaturedCollection collection={data.featuredCollection} />
